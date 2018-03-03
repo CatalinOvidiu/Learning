@@ -3,6 +3,7 @@
 #this is going to take a while haha
 #edit someting
 #edit
+#pycharm commit
 
 departament = ['dep_scule','manager','dep_aprov']
 angajati = ['petru','marcel','florin','ovidiu','catalin','vlad']
