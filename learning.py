@@ -1,7 +1,8 @@
 #git is awesome
 #corporate management
 #this is going to take a while haha
-#edit someting  
+#edit someting
+#edit
 
 departament = ['dep_scule','manager','dep_aprov']
 angajati = ['petru','marcel','florin','ovidiu','catalin','vlad']
