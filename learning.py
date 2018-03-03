@@ -1,4 +1,5 @@
 #git is awesome
+#corporate management
 departament = ['dep_scule','manager','dep_aprov']
 angajati = ['petru','marcel','florin','ovidiu','catalin','vlad']
 angajati_departament = {
