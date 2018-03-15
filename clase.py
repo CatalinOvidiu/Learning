@@ -1,5 +1,3 @@
-employees = {}
-department = {}
 
 
 class Employee(object):
@@ -31,6 +29,17 @@ class Department(object):
         # Dupa ce s-o executat liniile de mai sus, vei avea un angajat sanatos!
 
 
+employees = {'petre': Employee('petre', 'petre@petre.com', '2019-11-12'),
+            'ion': Employee('ion', 'ion@plm.com', '1999-11-13'),
+             'cata' : Employee('cata', 'cata@yahoo.com' , '01.06.90')
+
+}
+
+department = {'dep_scule' : Department('dep_scule' , 'petre'),
+              'dep_auto' : Department('dep_auto' , 'cata')
+
+}
+
 def create_employee():
     # Step 1 - facem rost de datele de care avem nevoie ca sa cream un angajat
     name = input('Provide a name: ')
@@ -51,7 +60,7 @@ def create_employee():
 def print_employees():
     for employee_name, employee in employees.items():
         print('Employee ', employee.name, ' with email: ', employee.email, ' with date of birth ', employee.birth_date)
-
+# ia numele, emailul si data nastei care l-am introdus de la tastatura si le listeaza
 
 def delete_employee():
     name = input("ce angajat sa stergem? ")
