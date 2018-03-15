@@ -2,12 +2,7 @@
 
 class Employee(object):
     def __init__(self, name, email, bdate, level, address, phone, department):
-        # Mai sus: self - ii un parametru "magic". El se refera la angajatul care se creeaza acuma
-        # name, email, si bdate is 3 argumente pe care tre sa i le dai tu, ca sa itzi poata crea
-        # un angajat.
 
-        # Astea 3 linii ajuta la creearea angajatului
-        # angajatul ii "self", si pe el vor fi puse astea 3 atribute
         self.name = name
         self.email = email
         self.birth_date = bdate
@@ -16,21 +11,12 @@ class Employee(object):
         self.phone = phone
         self.department = department
 
-        # Dupa ce s-o executat liniile de mai sus, vei avea un angajat sanatos!
-
 
 class Department(object):
     def __init__(self, name, manager):
-        # Mai sus: self - ii un parametru "magic". El se refera la angajatul care se creeaza acuma
-        # name, email, si bdate is 3 argumente pe care tre sa i le dai tu, ca sa itzi poata crea
-        # un angajat.
-
-        # Astea 3 linii ajuta la creearea angajatului
-        # angajatul ii "self", si pe el vor fi puse astea 3 atribute
         self.name = name
         self.manager = manager
 
-        # Dupa ce s-o executat liniile de mai sus, vei avea un angajat sanatos!
 
 
 employees = {'petre': Employee('petre', 'petre@petre.com', '2019-11-12', 'normal', 'str.brad bl.5 ap38', '0743234245', 'dep_scule'),
@@ -47,7 +33,7 @@ departments = {'dep_scule' : Department('dep_scule', 'petre'),
 
 def create_employee():
     # Step 1 - facem rost de datele de care avem nevoie ca sa cream un angajat
-    name = raw_input('Provide a name: ')
+    name = input('Provide a name: ')
     email = input('Provide an email address: ')
     date = input('Provide a birth date - in whatever format you want: ')
     level = input('Provide level of the employee: ')
@@ -58,13 +44,7 @@ def create_employee():
     # Step 2 - crearea unui angajat
     angajat = Employee(name, email, date, level, address, phone, department)
     # Cu variabila angajat acuma te potzi juca. Potzi sa zici ashe
-    print(angajat)
-    print(angajat.birth_date)
-    print(angajat.email)
-    print(angajat.level)
-    print(angajat. address)
-    print(angajat.phone)
-    print(angajat.department)
+
 
     # Step 3
     employees[name] = angajat
