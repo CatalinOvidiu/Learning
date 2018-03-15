@@ -56,8 +56,11 @@ def print_employees():
 # ia numele, emailul si data nastei care l-am introdus de la tastatura si le listeaza
 
 def delete_employee():
-    name = input("ce angajat sa stergem? ")
-    del employees[name]
+    try:
+        name = input("ce angajat sa stergem? ")
+        del employees[name]
+    except KeyError:
+        print('Angajatul', name, 'nu exista')
 
 
 def create_department():
@@ -74,8 +77,11 @@ def create_department():
 
 
 def delete_department():
-    name = input("ce departament sa stergem? ")
-    del departments[name]
+    try:
+        name = input("ce departament sa stergem? ")
+        del departments[name]
+    except KeyError:
+        print('Departamentul' , name, 'nu exista')
 
 def print_department():
     for departament_name, departament in departments.items():
