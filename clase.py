@@ -1,7 +1,7 @@
 
 
 class Employee(object):
-    def __init__(self, name, email, bdate):
+    def __init__(self, name, email, bdate, level, address, phone, department):
         # Mai sus: self - ii un parametru "magic". El se refera la angajatul care se creeaza acuma
         # name, email, si bdate is 3 argumente pe care tre sa i le dai tu, ca sa itzi poata crea
         # un angajat.
@@ -11,6 +11,10 @@ class Employee(object):
         self.name = name
         self.email = email
         self.birth_date = bdate
+        self.level = level
+        self.address = address
+        self.phone = phone
+        self.department = department
 
         # Dupa ce s-o executat liniile de mai sus, vei avea un angajat sanatos!
 
@@ -29,29 +33,38 @@ class Department(object):
         # Dupa ce s-o executat liniile de mai sus, vei avea un angajat sanatos!
 
 
-employees = {'petre': Employee('petre', 'petre@petre.com', '2019-11-12'),
-            'ion': Employee('ion', 'ion@plm.com', '1999-11-13'),
-             'cata' : Employee('cata', 'cata@yahoo.com' , '01.06.90')
+employees = {'petre': Employee('petre', 'petre@petre.com', '2019-11-12', 'normal', 'str.brad bl.5 ap38', '0743234245', 'dep_scule'),
+            'ion': Employee('ion', 'ion@plm.com', '1999-11-13', 'normal', 'str.pori bl 2 ap 42', '07324235343', 'dep_auto'),
+             'cata' : Employee('cata', 'cata@yahoo.com' , '01.06.90', 'manager', 'str.ploi bl 1 ap1', '0723234231', 'dep_auto')
 
 }
 
-department = {'dep_scule' : Department('dep_scule' , 'petre'),
-              'dep_auto' : Department('dep_auto' , 'cata')
+departments = {'dep_scule' : Department('dep_scule', 'petre'),
+              'dep_auto' : Department('dep_auto' , 'cata' )
 
-}
+
+               }
 
 def create_employee():
     # Step 1 - facem rost de datele de care avem nevoie ca sa cream un angajat
-    name = input('Provide a name: ')
+    name = raw_input('Provide a name: ')
     email = input('Provide an email address: ')
     date = input('Provide a birth date - in whatever format you want: ')
+    level = input('Provide level of the employee: ')
+    address =input('Provide addres of the employee: ')
+    phone = input ('What is the employee phone no.: ')
+    department = input('For which department is the employee woring: ')
 
     # Step 2 - crearea unui angajat
-    angajat = Employee(name, email, date)
+    angajat = Employee(name, email, date, level, address, phone, department)
     # Cu variabila angajat acuma te potzi juca. Potzi sa zici ashe
     print(angajat)
     print(angajat.birth_date)
     print(angajat.email)
+    print(angajat.level)
+    print(angajat. address)
+    print(angajat.phone)
+    print(angajat.department)
 
     # Step 3
     employees[name] = angajat
@@ -59,32 +72,33 @@ def create_employee():
 
 def print_employees():
     for employee_name, employee in employees.items():
-        print('Employee ', employee.name, ' with email: ', employee.email, ' with date of birth ', employee.birth_date)
+        print('Employee ', employee.name, ' with email: ', employee.email, ' with date of birth ', employee.birth_date, 'with function', employee.level, 'lives at: ', employee.address, 'rechable at: ', employee.phone, 'lucreaza in dep', employee.department)
 # ia numele, emailul si data nastei care l-am introdus de la tastatura si le listeaza
 
 def delete_employee():
     name = input("ce angajat sa stergem? ")
     del employees[name]
 
+
 def create_department():
     name = input('Department name: ')
     manager = input('Who is the manager of this dep: ')
 
     departament = Department(name, manager)
-    print(department)
+    print(departments)
     print(departament.manager)
 
 
     # Step 3
-    department[name] = departament
+    departments[name] = departament
 
 
 def delete_department():
     name = input("ce departament sa stergem? ")
-    del department[name]
+    del departments[name]
 
 def print_department():
-    for departament_name, departament in department.items():
+    for departament_name, departament in departments.items():
         print('Departament ', departament.name, ' manager ', departament.manager)
 
 
