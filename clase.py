@@ -118,3 +118,4 @@ while ans:
         break
     else:
         print("\n Optiune invalida. Incearca din nou")
+#commit
