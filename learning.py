@@ -9,7 +9,7 @@ def create_employee():
     address_employees[item] = address
     print(angajati_departament)
 
-
+##test shit, not working
 def delete_employee():
     item = input("cine sa fie sters: ")
     angajati.remove(item)
